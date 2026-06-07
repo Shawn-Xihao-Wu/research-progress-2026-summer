@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "Summer 2026 Research Progress"
+  pageTitle: "Research Progress"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: Shawn-Xihao-Wu.github.io/research-progress-2026-summer
+  baseUrl: shawn-xihao-wu.github.io/research-progress-2026-summer
   ignorePatterns:
     - private
     - templates
