@@ -21,25 +21,25 @@ configuration:
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#f6f7f4"
+        lightgray: "#dde4dd"
+        gray: "#8c9a94"
+        darkgray: "#36433f"
+        dark: "#17211f"
+        secondary: "#2b6770"
+        tertiary: "#a55b3a"
+        highlight: rgba(43, 103, 112, 0.12)
+        textHighlight: "#f4d06f66"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#111615"
+        lightgray: "#27312e"
+        gray: "#83918c"
+        darkgray: "#d6ded9"
+        dark: "#f3f6f1"
+        secondary: "#8cc8c0"
+        tertiary: "#e2a176"
+        highlight: rgba(140, 200, 192, 0.14)
+        textHighlight: "#b88d3d66"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
@@ -260,7 +260,7 @@ plugins:
       name: quartz-themes
       repo: github:saberzero1/quartz-themes
       subdir: plugin
-    enabled: true
+    enabled: false
     options:
       theme: default
   - source: github:quartz-community/obsidian-plugin-excalidraw

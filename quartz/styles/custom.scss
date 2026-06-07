@@ -1,3 +1,387 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+:root {
+  --surface: color-mix(in srgb, var(--light) 88%, white 12%);
+  --surface-muted: color-mix(in srgb, var(--lightgray) 55%, var(--light) 45%);
+  --border-subtle: color-mix(in srgb, var(--lightgray) 78%, transparent);
+  --shadow-soft: 0 18px 50px rgba(20, 33, 31, 0.08);
+}
+
+html[saved-theme="dark"] {
+  --surface: color-mix(in srgb, var(--light) 92%, white 8%);
+  --surface-muted: color-mix(in srgb, var(--lightgray) 45%, var(--light) 55%);
+  --border-subtle: color-mix(in srgb, var(--lightgray) 75%, transparent);
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+body {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--light) 88%, white 12%) 0, var(--light) 24rem),
+    var(--light);
+  font-size: 17px;
+}
+
+.page {
+  max-width: 1480px;
+}
+
+.page > #quartz-body {
+  box-sizing: border-box;
+  column-gap: 2rem;
+}
+
+.page > #quartz-body .sidebar {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
+.page > #quartz-body .center {
+  padding-top: 4.6rem;
+}
+
+.page > #quartz-body .page-header {
+  margin-top: 4.6rem;
+}
+
+.page-title {
+  line-height: 1.05;
+}
+
+.page-title a {
+  color: var(--dark);
+}
+
+.page-title a::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 0.75rem;
+  border-radius: 999px;
+  background: var(--tertiary);
+}
+
+.search > .search-button {
+  height: 2.35rem;
+  border-color: var(--border-subtle);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 1px 0 rgba(20, 33, 31, 0.04);
+}
+
+.search > .search-button > p {
+  color: var(--darkgray);
+  font-size: 0.95rem;
+}
+
+.search > .search-button:hover,
+button.mobile-explorer:hover {
+  border-color: color-mix(in srgb, var(--secondary) 36%, var(--lightgray));
+}
+
+button.mobile-explorer,
+button.desktop-explorer {
+  border-radius: 8px;
+}
+
+button.desktop-explorer {
+  padding: 0.2rem 0;
+}
+
+.explorer-content {
+  margin-top: 0.8rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.explorer-content ul li > a,
+.folder-container div > a,
+.folder-container div > button span {
+  border-radius: 6px;
+}
+
+.explorer-content ul li > a {
+  display: inline-block;
+  padding: 0.12rem 0.35rem;
+  margin-left: -0.35rem;
+}
+
+.explorer-content ul li > a:hover,
+.explorer-content ul li > a.active {
+  background: var(--highlight);
+  color: var(--secondary);
+}
+
+.folder-container div > button span,
+.folder-container div > a {
+  color: var(--dark);
+}
+
+.graph,
+.backlinks,
+.toc {
+  padding-top: 0.2rem;
+}
+
+.graph > h3,
+.backlinks > h3,
+.toc > h3,
+.explorer .title-button h2 {
+  color: var(--dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.graph > .graph-outer {
+  height: 220px;
+  margin-top: 0.8rem;
+  border-color: var(--border-subtle);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.backlinks > ul.overflow {
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.backlinks > ul.overflow > li {
+  margin: 0.35rem 0;
+}
+
+.toc ul {
+  border-left-color: var(--border-subtle);
+}
+
+.breadcrumbs {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.article-title {
+  max-width: 18ch;
+  margin-top: 0;
+  color: var(--dark);
+  font-size: clamp(2.35rem, 3.4vw, 3.65rem);
+  line-height: 1;
+}
+
+.content-meta {
+  margin-top: 0.9rem;
+  color: var(--gray);
+}
+
+article {
+  max-width: 760px;
+  padding-bottom: 5rem;
+}
+
+article > p:first-of-type {
+  max-width: 42rem;
+  color: color-mix(in srgb, var(--darkgray) 84%, var(--dark));
+  font-size: 1.18rem;
+  line-height: 1.75;
+}
+
+article h2 {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--dark);
+  font-size: 1.35rem;
+}
+
+article h3 {
+  color: var(--dark);
+}
+
+article p,
+article li {
+  line-height: 1.72;
+}
+
+article > ul {
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1.15rem;
+}
+
+article > h2 + ul {
+  margin-top: 0.65rem;
+}
+
+article > h2 + ul li::marker {
+  color: var(--tertiary);
+}
+
+a.internal {
+  background: color-mix(in srgb, var(--secondary) 9%, transparent);
+}
+
+a.internal:hover {
+  background: color-mix(in srgb, var(--tertiary) 13%, transparent);
+}
+
+blockquote {
+  padding: 0.85rem 1rem;
+  border-left-color: var(--tertiary);
+  border-radius: 0 8px 8px 0;
+  background: var(--surface-muted);
+}
+
+pre,
+code {
+  border-radius: 8px;
+}
+
+pre {
+  border-color: var(--border-subtle);
+  background: var(--surface);
+}
+
+.section-ul {
+  display: grid;
+  gap: 0.8rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.section-li {
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.section-li:first-child {
+  border-top: 0;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.28fr) minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+}
+
+.section .meta {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.section .desc h3 {
+  font-size: 1.08rem;
+}
+
+.section > .tags {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+a.internal.tag-link {
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--secondary) 10%, transparent);
+  color: var(--secondary);
+  font-size: 0.84rem;
+}
+
+.search > .search-container {
+  background: color-mix(in srgb, var(--light) 74%, transparent);
+}
+
+.search > .search-container > .search-space > *:not(.ghost-text):not(.tag-suggestions) {
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+.search > .search-container > .search-space > input,
+.search > .search-container > .search-space > .search-layout {
+  border-color: var(--border-subtle);
+}
+
+.search > .search-container > .search-space > .search-layout > .results-container .result-card:hover,
+.search > .search-container > .search-space > .search-layout > .results-container .result-card:focus,
+.search > .search-container > .search-space > .search-layout > .results-container .result-card.focus {
+  background: var(--highlight);
+}
+
+@media all and ($tablet) {
+  .page > #quartz-body {
+    column-gap: 1.2rem;
+  }
+
+  .page > #quartz-body .center {
+    padding-top: 3rem;
+  }
+}
+
+@media all and ($mobile) {
+  body {
+    font-size: 16px;
+  }
+
+  .page > #quartz-body {
+    padding: 0 1.15rem;
+  }
+
+  .page > #quartz-body .center {
+    padding-top: 1.5rem;
+  }
+
+  .page > #quartz-body .page-header {
+    margin-top: 0.5rem;
+  }
+
+  .page > #quartz-body .sidebar.left {
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+
+  .page-title {
+    max-width: 10.5rem;
+    font-size: 1.35rem;
+    white-space: nowrap;
+  }
+
+  .page-title a::after {
+    width: 2.5rem;
+    margin-top: 0.55rem;
+  }
+
+  .search {
+    max-width: 6.4rem;
+  }
+
+  .search > .search-button {
+    padding-right: 0.7rem;
+  }
+
+  .article-title {
+    max-width: 100%;
+    font-size: 2.25rem;
+  }
+
+  article > p:first-of-type {
+    font-size: 1.04rem;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .section > .tags {
+    grid-column: 1;
+  }
+
+  .explorer .explorer-content {
+    background: var(--light);
+  }
+}
