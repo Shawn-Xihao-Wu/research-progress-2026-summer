@@ -1,7 +1,7 @@
 **Key points**:
 - Weak derivatives
-- Soblev spaces
 - Weak formulation of 1D Poisson equations
+- Soblev spaces
 ---
 
 We start with 1D Poisson equations. We use the following boundary value problem as in Silverster's Primer on finite elements:
@@ -26,10 +26,49 @@ a simple step function, then there is no **function** $u$ (not just the ones in 
 
 This means that we need to enlarge the definition of derivatives so that BVP like $(1)$ can have solutions for irregular $f$.
 
-> **Weak derivative**: we say that g is a weak derivative of $u$ if 
+> **Weak derivative (1D)**: we say that $g \in L^2(\Omega)$ is a weak derivative of $u \in L^2(\Omega)$ if 
 > 
 > $$
->	\int_{\Omega} g v' = -\int_{\Omega} fv, \forall v \in \cC^\infty_{c}(\Omega).
+>	\int_{\Omega} gv = -\int_{\Omega} u v', \forall v \in \cC^\infty_{c}(\Omega).
 > $$
 
-To motivate this definition, first note that if $u$ is smooth
+To motivate this definition, first note that if $u$ is smooth enough, and $v$ is perfectly smooth and vanishes at $\partial \Omega$, then by 1D integration by parts, 
+$$
+	\int_{\Omega} u'v = \underbrace{ [uv]_{\partial\Omega} }_{ 0 } - \int_{\Omega} uv' = - \int_{\Omega} uv'.
+$$
+The the definition of weak derivative just turned the above observation on its head: $g$ is a weak derivative of $u$ if they make the above integral formula true. 
+
+One note that if $g$ is a classic derivative of $u$ then it is a weak derivative, so the definition of weak derivative is indeed a generalization, and we have enlarge the spaces where $u$ has any derivatives from the space of differentiable functions on $\Omega$ to $L^2(\Omega)$.
+
+Also note that we need $u, g \in L^2$ so that the integrals are finite.
+
+---
+
+Therefore, the differential equation in $(1)$ can be read as that $u$'s double weak derivative is $-f$. This gives the **weak formula** of the 1D poisson: we seek $u \in L^2$ that
+$$
+	\int_{\Omega} -fv = -\int_{\Omega} u'v', \text{ or simply } \int_{\Omega} fv = \int_{\Omega} u'v', \forall v \in \cC^\infty_{c}(\Omega),
+$$
+that satisfy the boundary condition $u(0) = 0 = u(1)$ and that $u' \in L^2$.
+
+
+
+The theory goes deeper. The solution $u$ before naturally sits inside **Sobolev space**.
+> **Sobolev space**: $H^k(\Omega) = \left\{  u: \Omega \to \mathbb{R}: \int_{\Omega}u^2, \int_{\Omega} (u')^2, \dots, \int_{\Omega}(u^{(k)})^2 < \infty \right\},$ where $u', u'', \dots, u^{(k)}$ includes weak derivatives.
+
+More precisely,
+$$
+	u \in H^1_{0}(\Omega) = \{ u \in H^1(\Omega) : u(0) = 0 = u(1) \}.
+$$
+
+It's an established result that $H^k$ is a complete normed space, i.e., a Banach space.
+
+Therefore, we can rephrase the weak formulation of 1D Poisson as that we seek $u \in H^1_{0}$ s.t.
+$$
+	\int_{\Omega} fv = \int_{\Omega} u'v', \forall v \in \cC^\infty_{c}(\Omega). \tag{2}
+$$
+
+Also note that Silverster introduces the weak formulation as that we seek $u \in H^1_{0}$ s.t.
+$$
+	\int_{\Omega} fv = \int_{\Omega} u'v', \forall v \in H^1_{0}. \tag{3}
+$$
+One note that (2) and (3) are the same statement as $\cC^\infty_{c}(\Omega)$ is dense in $H^1_{0}(\Omega)$ with the Sobolev norm.

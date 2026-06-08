@@ -24,7 +24,7 @@ Click below for more detailed weekly summaries.
 Click [[Questions|here]] for the current & past questions that need to be discussed.
 
 # Currently reading
-- Elman, *Finite Elements and Fast Iterative Solvers*, Chapter 1
+- Elman, *Finite Elements and Fast Iterative Solvers*
 
 Click [[Reading Logs|here]] for the complete reading logs.
 
