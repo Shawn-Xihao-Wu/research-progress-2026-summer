@@ -3,27 +3,27 @@ title: "Summer 2026 Research Progress"
 ---
 This site tracks my reading and research progress for Summer 2026.
 
-# Main Research Goals
+# Main research goal
 > Locate the structure properties of the SUPG discretization matrices from convection-diffusion problems that explain when and why the Field-of-Values based bounds recreate the classic the two-phased GMRES convergence behaviour.
 
 
-## Current focus
+# Current focus
 - Structure theorems regarding Glerkin finite element discretization matrices of Poisson
 
-Click [[Focuses|here]] for the complete list of past research milestones.
+Click [[Milestones|here]] for the complete list of past research milestones.
 
-## Weekly updates
+# Weekly updates
 Click below for more detailed weekly summaries.
 
 - [[Week 3 write-up]]
 - [[Week 2 write-up]]
 - [[Week 1 write-up]]
 
-## Questions
+# Questions
 
 Click [[Questions|here]] for the current & past questions that need to be discussed.
 
-## Currently reading
+# Currently reading
 - Elman, *Finite Elements and Fast Iterative Solvers*, Chapter 1
 
 Click [[Reading Logs|here]] for the complete reading logs.
