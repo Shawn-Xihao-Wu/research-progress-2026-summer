@@ -12,12 +12,12 @@ This site tracks my reading and research progress for Summer 2026.
 
 Click [[Milestones|here]] for the complete list of past research milestones.
 
-# Weekly updates
+# Past updates
 Click below for more detailed weekly summaries.
 
-- [[Week 3 write-up]]
-- [[Week 2 write-up]]
-- [[Week 1 write-up]]
+- [[Write-Up Part 3]]
+- [[Write-Up Part 2]]
+- [[Write-Up Part 1]]
 
 # Questions
 
